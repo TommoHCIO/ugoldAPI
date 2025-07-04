@@ -1,0 +1,24 @@
+[build]
+  functions = "netlify/functions"
+
+  # netlify.toml
+
+[build]
+  # This tells Netlify where your serverless functions are located.
+  # Since you put them in 'netlify/functions', we specify that here.
+  functions = "netlify/functions"
+
+# Optional: Add redirects for cleaner API paths
+# This makes your API accessible at /totalsupply instead of /.netlify/functions/totalsupply
+[[redirects]]
+  from = "/totalsupply"
+  to = "/.netlify/functions/totalsupply"
+  status = 200
+  force = true # Ensures this redirect takes precedence
+
+# This makes your API accessible at /cmc/totalsupply instead of /.netlify/functions/cmc-totalsupply
+[[redirects]]
+  from = "/cmc/totalsupply"
+  to = "/.netlify/functions/cmc-totalsupply"
+  status = 200
+  force = true
